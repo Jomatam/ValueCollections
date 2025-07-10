@@ -1,0 +1,16 @@
+<Project>
+
+  <!-- General properties for all projects -->
+  <PropertyGroup>
+    <!-- When upgrading the TargetFrameworks, make sure to adjust/check the AnalysisLevel below -->
+    <TargetFramework>net9.0</TargetFramework>
+    <Platforms>x64</Platforms>
+    <Nullable>Enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>9.0-all</AnalysisLevel>
+    <WarningLevel>9999</WarningLevel>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+  </PropertyGroup>
+
+</Project>

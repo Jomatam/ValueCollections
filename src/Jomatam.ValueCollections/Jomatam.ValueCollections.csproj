@@ -1,0 +1,9 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" >
+
+  <PropertyGroup>
+    <PackageId>Jomatam.ValueCollections</PackageId>
+    <Version>0.1.0</Version>
+    <Description>ValueCollections</Description>
+  </PropertyGroup>
+
+</Project>

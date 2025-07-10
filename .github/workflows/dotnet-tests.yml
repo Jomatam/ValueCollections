@@ -1,0 +1,29 @@
+name: .NET Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'  # or your target version
+
+    - name: Restore dependencies
+      run: dotnet restore test/Jomatam.ValueCollections.Tests.csproj --locked-mode
+
+    - name: Build tests
+      run: dotnet build test/Jomatam.ValueCollections.Tests.csproj --configuration Release
+
+    - name: Run tests
+      run: dotnet test test/Jomatam.ValueCollections.Tests.csproj --no-build --configuration Release --verbosity normal
