@@ -20,7 +20,7 @@ jobs:
         dotnet-version: '9.0.x'  # or your target version
 
     - name: Restore dependencies
-      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj
+      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode --configfile .config/nuget.config
 
     - name: Build tests
       run: dotnet build test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --configuration Release
