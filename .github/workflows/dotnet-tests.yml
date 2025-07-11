@@ -23,7 +23,7 @@ jobs:
       run: dotnet nuget locals all --clear
 
     - name: Restore dependencies
-      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode --configfile .config/nuget.config
+      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode
 
     - name: Build tests
       run: dotnet build test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --configuration Release
