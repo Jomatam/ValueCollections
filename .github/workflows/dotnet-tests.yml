@@ -14,20 +14,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'  # or your target version
-
-    - name: Clear NuGet cache
-      run: dotnet nuget locals all --clear
-
-    - name: Dump NuGet config hierarchy
-      run: dotnet nuget list source
-
     - name: Restore dependencies
       run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode
-
 
     - name: Build tests
       run: dotnet build test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --configuration Release
