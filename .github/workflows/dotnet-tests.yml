@@ -18,6 +18,7 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: '9.0.x'  # or your target version
+        include-prerelease: true
 
     - name: Clear NuGet cache
       run: dotnet nuget locals all --clear
@@ -26,7 +27,7 @@ jobs:
       run: dotnet nuget list source
 
     - name: Restore dependencies
-      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode -v d
+      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode
 
 
     - name: Build tests
