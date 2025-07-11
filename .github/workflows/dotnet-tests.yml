@@ -19,6 +19,9 @@ jobs:
       with:
         dotnet-version: '9.0.x'  # or your target version
 
+    - name: Clear NuGet cache
+      run: dotnet nuget locals all --clear
+
     - name: Restore dependencies
       run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode --configfile .config/nuget.config
 
