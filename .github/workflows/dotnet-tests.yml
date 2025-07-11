@@ -26,10 +26,8 @@ jobs:
       run: dotnet nuget list source
 
     - name: Restore dependencies
-      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode
+      run: dotnet restore test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --locked-mode -v d
 
-    - name: Dump NuGet config hierarchy
-      run: dotnet nuget list source
 
     - name: Build tests
       run: dotnet build test/Jomatam.ValueCollections.Tests/Jomatam.ValueCollections.Tests.csproj --configuration Release
