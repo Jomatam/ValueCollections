@@ -17,8 +17,7 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '9.0.x'  # or your target version
-        include-prerelease: true
+        dotnet-version: '8.0.x'  # or your target version
 
     - name: Clear NuGet cache
       run: dotnet nuget locals all --clear
